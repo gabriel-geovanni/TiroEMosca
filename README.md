@@ -1,5 +1,5 @@
 # HOW TO PLAY
-## Opção Singleplayer e Singleplayer Vs IA
+## Opção Singleplayer e SingleplayerVsIA
 - Inicialize o servidor
 ```
 python3 servidor.py

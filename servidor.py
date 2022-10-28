@@ -2,7 +2,6 @@
 import random
 import socket
 import os
-import pickle
 
 
 class Jogador:
@@ -233,8 +232,6 @@ def gameMultiplayer(jogadores, server):
                 for j in range(3):
                     if jogada[i] == numJogador2[j]:
                         tiroJogador += 1
-        
-
 
         for i in range(3):
             if jogada2[i] == numJogador[i]:
@@ -272,42 +269,6 @@ def gameMultiplayer(jogadores, server):
         i += 1
     
     return 0
-
-
-
-             
-
-
-
-
-
-def enviarDados(tipo, jogadores, banca, i):
-    if banca[0].mao != []:
-        return  pickle.dumps([tipo, 
-                                jogadores[i].saldo,
-                                jogadores[i].aposta,
-                                [banca[0].mao[0], 'back'],
-                                jogadores[i].mao,
-                                jogadores[0].nome, 
-                                jogadores[0].vitorias, 
-                                jogadores[1].nome, 
-                                jogadores[1].vitorias, 
-                                banca[0].vitorias, 
-                                jogadores[0].saldo, 
-                                jogadores[1].saldo])           
-    else:
-        return  pickle.dumps([tipo, 
-                                jogadores[i].saldo,
-                                jogadores[i].aposta,
-                                ['back', 'back'],
-                                jogadores[i].mao,
-                                jogadores[0].nome, 
-                                jogadores[0].vitorias, 
-                                jogadores[1].nome, 
-                                jogadores[1].vitorias, 
-                                banca[0].vitorias, 
-                                jogadores[0].saldo, 
-                                jogadores[1].saldo])     
 
 
 def gerarNumero(numerosExcluidosIA):
